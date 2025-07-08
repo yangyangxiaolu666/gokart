@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Kart Racing Game - Play Free Online Kart Racing</title>
+    <meta name="description" content="Play the ultimate Go Kart racing game online for free! Experience high-speed kart racing with stunning graphics and exciting tracks. Race against friends or AI opponents in this addictive kart racing adventure.">
+    <meta name="keywords" content="go kart, kart racing, racing game, online racing, free racing game, kart game, racing simulator">
+    <meta name="author" content="Go Kart Racing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/go-kart-racing-game">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Go Kart Racing Game - Play Free Online Kart Racing">
+    <meta property="og:description" content="Play the ultimate Go Kart racing game online for free! Experience high-speed kart racing with stunning graphics and exciting tracks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/go-kart-racing-game">
+    <meta property="og:image" content="https://yourdomain.com/images/go-kart-preview.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Go Kart Racing Game - Play Free Online Kart Racing">
+    <meta name="twitter:description" content="Play the ultimate Go Kart racing game online for free! Experience high-speed kart racing with stunning graphics and exciting tracks.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/go-kart-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B35',
+                        'dark': '#1A1A1A',
+                        'light': '#F8F8F8',
+                        'gray': '#666666'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 70vh;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-primary {
+            background: #FF6B35;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+                max-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Go Kart Racing</h1>
+                    <p class="text-lg opacity-90">Experience the thrill of high-speed kart racing online!</p>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#game" class="hover:text-primary transition-colors">Play Now</a>
+                    <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Game Section -->
+        <section id="game" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4">Play Go Kart Racing Online</h2>
+                <p class="text-lg text-gray max-w-2xl mx-auto">
+                    Jump into the driver's seat and experience the ultimate kart racing adventure. 
+                    Race through challenging tracks, compete against skilled opponents, and become the champion!
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-6xl mx-auto">
+                <div class="game-container w-full">
+                    <iframe 
+                        src="https://www.crazygames.com/embed/boom-karts" 
+                        style="width: 100%; height: 100%;" 
+                        frameborder="0" 
+                        allow="gamepad *;"
+                        title="Go Kart Racing Game"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6">
+                <button id="fullscreenBtn" class="btn-primary text-white px-8 py-3 rounded-full font-semibold">
+                    Play Fullscreen
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-dark text-center mb-12">Game Features</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">High-Speed Racing</h3>
+                    <p class="text-gray">Experience adrenaline-pumping speeds as you navigate through challenging race tracks with realistic physics.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Multiplayer Racing</h3>
+                    <p class="text-gray">Compete against players from around the world in real-time multiplayer races and climb the global leaderboard.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Customizable Karts</h3>
+                    <p class="text-gray">Unlock and customize your kart with various upgrades, paint jobs, and performance enhancements.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Leaderboards</h3>
+                    <p class="text-gray">Track your progress and compete for the top spot on global and regional leaderboards.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Quick Races</h3>
+                    <p class="text-gray">Jump into action instantly with quick race modes that let you start racing in seconds.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Free to Play</h3>
+                    <p class="text-gray">Enjoy unlimited racing action completely free with no downloads or installations required.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark text-center mb-8">About Go Kart Racing</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-dark mb-4">The Ultimate Racing Experience</h3>
+                        <p class="text-gray mb-4">
+                            Go Kart Racing brings you the most exciting and immersive kart racing experience available online. 
+                            With stunning 3D graphics, realistic physics, and smooth gameplay, every race feels like a real karting adventure.
+                        </p>
+                        <p class="text-gray mb-4">
+                            Whether you're a seasoned racing veteran or a newcomer to the world of kart racing, our game offers 
+                            something for everyone. Master the art of drifting, perfect your racing lines, and discover the fastest 
+                            routes to victory.
+                        </p>
+                        <p class="text-gray">
+                            Join millions of players worldwide and experience the thrill of competitive kart racing from the comfort 
+                            of your browser. No downloads, no installations - just pure racing excitement at your fingertips.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Realistic physics and controls</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Multiple race tracks and environments</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Progressive difficulty levels</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Regular updates and new content</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Cross-platform compatibility</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-dark">Optimized for mobile and desktop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-dark text-center mb-8">How to Play</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">Choose Your Kart</h3>
+                    <p class="text-gray">Select from a variety of karts, each with unique handling and speed characteristics.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">Master the Controls</h3>
+                    <p class="text-gray">Use arrow keys or WASD to control your kart. Spacebar for boost and drift for sharp turns.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-dark mb-2">Race to Victory</h3>
+                    <p class="text-gray">Complete laps as fast as possible, avoid obstacles, and outmaneuver your opponents to win!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Go Kart Racing</h3>
+                    <p class="text-gray-300 mb-4">
+                        The ultimate online kart racing experience. Race, compete, and become the champion!
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#game" class="text-gray-300 hover:text-primary transition-colors">Play Game</a></li>
+                        <li><a href="#features" class="text-gray-300 hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Game Info</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Genre: Racing</li>
+                        <li>Platform: Browser</li>
+                        <li>Players: Single & Multiplayer</li>
+                        <li>Rating: E for Everyone</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Go Kart Racing. All rights reserved. | Powered by CrazyGames</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fullscreen functionality
+        document.getElementById('fullscreenBtn').addEventListener('click', function() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card-hover, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-fade-in {
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
